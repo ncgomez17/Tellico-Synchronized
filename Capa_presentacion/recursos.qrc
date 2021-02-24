@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="tellico">
+    <file>imagenes/tellico.png</file>
+  </qresource>
+</RCC>
