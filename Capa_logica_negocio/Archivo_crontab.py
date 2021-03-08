@@ -3,7 +3,7 @@ from crontab import CronTab
 from getpass import getuser
 import os
 import re
-from Capa_logica_negocio.sincronizacion import establecer_sincronizacion
+from Capa_logica_negocio.Sincronizacion import establecer_sincronizacion
 
 
 def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
@@ -11,7 +11,7 @@ def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
     tiempo. """
     usuario = getuser()
     wd = os.getcwd()
-    wd = ' python3 ' + wd + '/sincronizacion.py' + ' ' + ruta + ' ' + token + ' ' + ServidorWeb
+    wd = ' python3 ' + wd + '/Sincronizacion.py' + ' ' + ruta + ' ' + token + ' ' + ServidorWeb
     my_cron = CronTab(user=usuario)
     exists = list(my_cron.find_comment(ruta))
     if exists.__len__() == 0:
@@ -20,8 +20,6 @@ def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
             meses = "*"
         if str(dias) == "0":
             dias = "*"
-        if str(horas) == "0":
-            horas = "*"
         job.setall(str(min) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
         if job.is_valid() and establecer_sincronizacion(ruta, token, ServidorWeb):
             my_cron.write()
@@ -81,9 +79,6 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
                 meses = "*"
             if str(dias) == "0":
                 dias = "*"
-            if str(horas) == "0":
-                horas = "*"
-
             job.setall(str(minutos) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
             if job.is_valid():
                 my_cron.write()
@@ -92,10 +87,9 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
 
 
 if __name__ == "__main__":
-    ruta = "/home/ncgomez17/Documentos/tellico2"
+    ruta = "/home/ncgomez17/Documentos/asdsad"
     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.RCr9bzWVbSq9uNCROm0o8-h4SkoNdYyuaASS9JmlaBI"
     ServidorWeb = 'http://192.168.1.47/index/colecciones/sincronizacion/'
-    anhadir_sincronizacion(ruta, token, ServidorWeb, 8, 9, 0, 12)
-    ##editar_sincronizacion(ruta,24,5,1,1)
-
-##Solo queda adecuar como se hara el tiempo de la sincronzacion, CUANDO SE HAGA ESTO MODIFCAR EL EDITAR Y EL AÑADIR
+    anhadir_sincronizacion(ruta, token, ServidorWeb, 5, 0, 0, 12)
+    editar_sincronizacion(ruta, 5, 0, 0, 12)
+    print(listar_sincronizaciones())

@@ -6,7 +6,7 @@ from os import remove
 usuario = getuser()
 sys.path.append('/home/' + usuario + '/PycharmProjects/pythonProject/')
 from Capa_logica_negocio.LibrosJSON import LibrosJSON
-from capa_acceso_datos.Extraccion import extraer_zip, tratar_xml
+from Capa_acceso_datos.Extraccion import extraer_zip, tratar_xml
 
 
 def establecer_sincronizacion(ruta, token, servidor):

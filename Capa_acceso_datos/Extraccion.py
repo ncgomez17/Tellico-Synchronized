@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from zipfile import ZipFile
 from xml.dom import minidom, DOMException
-from capa_acceso_datos.Libro import Libro
+from Capa_acceso_datos.Libro import Libro
+
 
 ##Funcion para extraer todos los archivos a partir de la ruta del zip
 
@@ -17,9 +18,6 @@ def extraer_zip(ruta):
         print('Done!')
 
 
-
-
-
 def tratar_xml():
     """Funcion que se encargara de sacar la informacion que nos es relevante de cada libro de la coleccion
         Devuelve una lista de objetos Libro con la informacion ya guardada en estos"""
@@ -28,9 +26,9 @@ def tratar_xml():
         list = []
         libros = doc.getElementsByTagName("entry")
         for libro in libros:
-            #creamos el objeto libro donde almacenamos los datos
+            # creamos el objeto libro donde almacenamos los datos
             l = Libro()
-            #cogemos los elementos que nos interesan
+            # cogemos los elementos que nos interesan
             title = libro.getElementsByTagName("title")
             autores = libro.getElementsByTagName("authors")
             publisher = libro.getElementsByTagName("publisher")
@@ -39,7 +37,7 @@ def tratar_xml():
             pages = libro.getElementsByTagName("pages")
             lang = libro.getElementsByTagName("language")
             comments = libro.getElementsByTagName("comments")
-            #Comprobamos si los elementos estan vacios, sino los añadimos al objeto libro
+            # Comprobamos si los elementos estan vacios, sino los añadimos al objeto libro
             if title.length != 0:
                 l.titulo = title[0].firstChild.data
 
@@ -71,4 +69,3 @@ def tratar_xml():
         print("Error en el parseo de datos XML")
 
     return list
-

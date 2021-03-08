@@ -99,7 +99,7 @@ class Ui_Ventana_Anhadir(object):
         self.label_8.setObjectName("label_8")
         self.spinBox_4 = QtWidgets.QSpinBox(self.centralwidget)
         self.spinBox_4.setGeometry(QtCore.QRect(170, 240, 47, 24))
-        self.spinBox_4.setMinimum(1)
+        self.spinBox_4.setMinimum(0)
         self.spinBox_4.setMaximum(31)
         self.spinBox_4.setObjectName("spinBox_4")
         Ventana_Anhadir.setCentralWidget(self.centralwidget)
