@@ -231,14 +231,6 @@ background-color: rgb(151, 165, 204);</string>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
-   <widget class="QMenu" name="menu_gestionar">
-    <property name="title">
-     <string>Gestionar sincronizaciones</string>
-    </property>
-    <addaction name="editar_sincronizaciones"/>
-    <addaction name="anhadir_sincronizaciones"/>
-   </widget>
-   <addaction name="menu_gestionar"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="editar_sincronizaciones">

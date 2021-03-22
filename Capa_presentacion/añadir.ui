@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Tellico-Synchronized</string>
   </property>
   <property name="styleSheet">
    <string notr="true">
@@ -83,7 +83,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>Introduce el Servidor Web:</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="servidor">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -96,7 +96,7 @@ background-color: rgb(151, 165, 204);</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="anhadir">
+   <widget class="QPushButton" name="anhadir_sincro">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -112,7 +112,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>Añadir Sincronización</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
+   <widget class="QTextEdit" name="token">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -186,7 +186,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>Cada cuanto tiempo se realizará la sincronización:</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="min">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -199,7 +199,7 @@ background-color: rgb(151, 165, 204);</string>
      <number>59</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_2">
+   <widget class="QSpinBox" name="horas">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -212,7 +212,7 @@ background-color: rgb(151, 165, 204);</string>
      <number>23</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_3">
+   <widget class="QSpinBox" name="dias">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -277,7 +277,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>meses</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_4">
+   <widget class="QSpinBox" name="meses">
     <property name="geometry">
      <rect>
       <x>170</x>

@@ -23,13 +23,13 @@ def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
         job.setall(str(min) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
         if job.is_valid() and establecer_sincronizacion(ruta, token, ServidorWeb):
             my_cron.write()
-            return True
+            return True,"La sincronizacion es correcta"
         else:
             print("La sincronizacion no es correcta")
-            return False
+            return False,"La sincronizacion no es correcta"
     else:
         print("Ese archivo ya se esta sincronizando")
-        return False
+        return False,"Ese archivo ya se esta sincronizando"
 
 
 def eliminar_sincronizacion(ruta):
