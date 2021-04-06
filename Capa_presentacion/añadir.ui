@@ -212,7 +212,7 @@ background-color: rgb(151, 165, 204);</string>
      <number>23</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="dias">
+   <widget class="QSpinBox" name="meses">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -264,7 +264,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>días</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="dias_2">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -277,7 +277,7 @@ background-color: rgb(151, 165, 204);</string>
      <string>meses</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="meses">
+   <widget class="QSpinBox" name="dias">
     <property name="geometry">
      <rect>
       <x>170</x>

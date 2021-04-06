@@ -139,8 +139,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Funcion para ajustar los elementos de la tabla"""
         self.tablaSincronizaciones.setColumnWidth(0, 200)
         self.tablaSincronizaciones.setColumnWidth(1, 200)
-        self.tablaSincronizaciones.setColumnWidth(2, 80)
-        self.tablaSincronizaciones.setColumnWidth(3, 80)
+        self.tablaSincronizaciones.setColumnWidth(2, 90)
+        self.tablaSincronizaciones.setColumnWidth(3, 70)
         self.tablaSincronizaciones.setColumnWidth(4, 40)
 
         header = self.tablaSincronizaciones.horizontalHeader()

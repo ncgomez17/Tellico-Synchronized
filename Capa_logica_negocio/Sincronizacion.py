@@ -17,7 +17,7 @@ def establecer_sincronizacion(ruta, token, servidor):
         json = LibrosJSON(l1)
         print(json.transform(token))
         remove("tellico.xml")
-        return json.peticionUrl(servidor)
+        return json.enviar_URL(servidor)
     except Exception:
         return False
 

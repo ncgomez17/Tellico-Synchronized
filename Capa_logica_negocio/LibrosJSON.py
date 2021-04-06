@@ -37,7 +37,7 @@ class LibrosJSON:
         return self.__mensage
 
 
-    def peticionUrl(self, url):
+    def enviar_URL(self, url):
         """Funcion que envia los datos a una determinada url"""
         parsed_url = urlparse(url)
         if bool(parsed_url.scheme):

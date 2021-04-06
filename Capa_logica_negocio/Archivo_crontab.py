@@ -62,8 +62,8 @@ def listar_sincronizaciones():
         datos_sincro.remove(datos_sincro[0])
         datos_sincro.append(minutos)
         datos_sincro.append(horas)
-        datos_sincro.append(meses)
         datos_sincro.append(dias)
+        datos_sincro.append(meses)
         lista.append(datos_sincro)
     return lista
 
@@ -79,6 +79,10 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
                 meses = "*"
             if str(dias) == "0":
                 dias = "*"
+            print(minutos)
+            print(horas)
+            print(dias)
+            print(meses)
             job.setall(str(minutos) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
             if job.is_valid():
                 my_cron.write()
