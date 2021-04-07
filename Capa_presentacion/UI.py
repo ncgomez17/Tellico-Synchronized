@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 from PyQt5.QtCore import QModelIndex
 from PyQt5.QtWidgets import QFileDialog, QAction, QTableWidgetItem, QPushButton, QScrollBar, QWidget, QMessageBox
 from PyQt5.QtGui import QIcon, QPalette
 from PyQt5.uic.properties import QtWidgets
-
-from Capa_acceso_datos.Extraccion import extraer_zip
+import sys
+sys.path.append("..")
 from Capa_logica_negocio.Archivo_crontab import anhadir_sincronizacion, editar_sincronizacion
 from Capa_presentacion.anhadir import Ui_Ventana_Anhadir
 from Capa_presentacion.ventana_ui import *

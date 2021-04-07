@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-import sys
 from getpass import getuser
 from os import remove
-
+import sys
 usuario = getuser()
 sys.path.append('/home/' + usuario + '/PycharmProjects/pythonProject/')
 from Capa_logica_negocio.LibrosJSON import LibrosJSON

@@ -51,7 +51,7 @@ def listar_sincronizaciones():
     la lista devolvera elementos de las sincronizaciones con info sobre: localizacion del archivo,token,Servidor y tiempos"""
     lista = []
     usuario = getuser()
-    my_cron = CronTab(user=usuario)
+    my_cron = CronTab(user = usuario)
     for job in my_cron:
         minutos = str(job.minute)
         horas = str(job.hour)
