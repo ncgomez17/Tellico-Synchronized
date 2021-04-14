@@ -1,4 +1,4 @@
-#!/home/ncgomez17/PycharmProjects/pythonProject/venv/bin/python
+#!/home/ncgomez17/PycharmProjects/Tellico-Synchronized/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

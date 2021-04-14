@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='pythonProject',
+    name='Tellico-Synchronized',
     version='1',
     packages=[''],
     url='',
