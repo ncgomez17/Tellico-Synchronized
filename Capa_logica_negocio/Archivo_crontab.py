@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
+import os
 from crontab import CronTab
 from getpass import getuser
-import os
 import re
 from Capa_logica_negocio.Sincronizacion import establecer_sincronizacion
+import Capa_logica_negocio.Sincronizacion
 
 
 def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
     """ Function para añadir una sincronizacion a partir de la ruta del archivo,token y url del Servidor cada x
     tiempo. """
     usuario = getuser()
-    wd = os.getcwd()
-    wd = ' python3 ' + wd + '/Sincronizacion.py' + ' ' + ruta + ' ' + token + ' ' + ServidorWeb
+    wd = os.path.abspath(Capa_logica_negocio.Sincronizacion.__file__)
+
+    print(wd)
+    wd = ' python3 ' + str(wd) + ' ' + ruta + ' ' + token + ' ' + ServidorWeb
     my_cron = CronTab(user=usuario)
     exists = list(my_cron.find_comment(ruta))
     if exists.__len__() == 0:
@@ -23,13 +26,13 @@ def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
         job.setall(str(min) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
         if job.is_valid() and establecer_sincronizacion(ruta, token, ServidorWeb):
             my_cron.write()
-            return True,"La sincronizacion es correcta"
+            return True, "La sincronizacion es correcta"
         else:
             print("La sincronizacion no es correcta")
-            return False,"La sincronizacion no es correcta"
+            return False, "La sincronizacion no es correcta"
     else:
         print("Ese archivo ya se esta sincronizando")
-        return False,"Ese archivo ya se esta sincronizando"
+        return False, "Ese archivo ya se esta sincronizando"
 
 
 def eliminar_sincronizacion(ruta):
@@ -51,7 +54,7 @@ def listar_sincronizaciones():
     la lista devolvera elementos de las sincronizaciones con info sobre: localizacion del archivo,token,Servidor y tiempos"""
     lista = []
     usuario = getuser()
-    my_cron = CronTab(user = usuario)
+    my_cron = CronTab(user=usuario)
     for job in my_cron:
         minutos = str(job.minute)
         horas = str(job.hour)
@@ -88,6 +91,8 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
                 my_cron.write()
                 print("Archivo crontab modificado correctamente")
                 return True
+            else:
+                return False
 
 
 if __name__ == "__main__":
@@ -95,5 +100,5 @@ if __name__ == "__main__":
     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.RCr9bzWVbSq9uNCROm0o8-h4SkoNdYyuaASS9JmlaBI"
     ServidorWeb = 'http://192.168.1.47/index/colecciones/sincronizacion/'
     anhadir_sincronizacion(ruta, token, ServidorWeb, 5, 0, 0, 12)
-    editar_sincronizacion(ruta, 5, 0, 0, 12)
+    editar_sincronizacion(ruta, 4, 1, 0, 0)
     print(listar_sincronizaciones())
