@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 from unittest.mock import Mock
-import Sincronizacion
+from Capa_logica_negocio import Sincronizacion
 
 
 class TestSincronizacion(unittest.TestCase):

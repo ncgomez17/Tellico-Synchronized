@@ -93,6 +93,8 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
                 return True
             else:
                 return False
+    else:
+        return False
 
 
 if __name__ == "__main__":
