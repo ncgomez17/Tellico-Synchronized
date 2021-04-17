@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 
 class LibrosJSON:
     """Funcion que transforma los objetos libro en formato json y los permite enviar a una direccion"""
+
     def __init__(self, Libros):
         if len(Libros) == 0:
             raise Exception("La lista de libros esta vacía")
@@ -35,14 +36,13 @@ class LibrosJSON:
         self.__mensage = serialize
         return self.__mensage
 
-
     def enviar_URL(self, url):
         """Funcion que envia los datos a una determinada url"""
         parsed_url = urlparse(url)
         if bool(parsed_url.scheme):
             response = requests.post(url, json=self.__mensage)
             if response:
-                return response.text
+                return response.text,True
             else:
                 print("Respuesta fallida")
                 return False

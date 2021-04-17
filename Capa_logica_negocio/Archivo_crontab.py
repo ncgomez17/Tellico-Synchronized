@@ -12,8 +12,6 @@ def anhadir_sincronizacion(ruta, token, ServidorWeb, min, horas, dias, meses):
     tiempo. """
     usuario = getuser()
     wd = os.path.abspath(Capa_logica_negocio.Sincronizacion.__file__)
-
-    print(wd)
     wd = ' python3 ' + str(wd) + ' ' + ruta + ' ' + token + ' ' + ServidorWeb
     my_cron = CronTab(user=usuario)
     exists = list(my_cron.find_comment(ruta))
@@ -82,14 +80,9 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
                 meses = "*"
             if str(dias) == "0":
                 dias = "*"
-            print(minutos)
-            print(horas)
-            print(dias)
-            print(meses)
             job.setall(str(minutos) + " " + str(horas) + " " + str(dias) + " " + str(meses) + " " + "*")
             if job.is_valid():
                 my_cron.write()
-                print("Archivo crontab modificado correctamente")
                 return True
             else:
                 return False
