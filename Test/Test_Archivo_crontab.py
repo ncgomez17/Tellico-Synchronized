@@ -28,25 +28,19 @@ class TestArchivo_crontab(unittest.TestCase):
     def test_anhadir(self):
         result = anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
         self.assertEqual(result[0], True)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
     def test_anhadir_error_datos(self):
         result = anhadir_sincronizacion("DatasetsNone", self.token, self.url, self.min, self.horas, self.dias,
                                         self.meses)
         self.assertEqual(result[0], False)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
     def test_anhadir_sincronizacionExistente(self):
         anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
         result = anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
         self.assertEqual(result[0], False)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
     def test_anhadir_comprobar_tiempo(self):
         result = anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
@@ -59,9 +53,7 @@ class TestArchivo_crontab(unittest.TestCase):
                 self.assertEqual(job.day, self.dias)
                 self.assertEqual(job.month, self.meses)
         self.assertEqual(result[0], True)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
     def test_eliminar(self):
         anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
@@ -77,9 +69,8 @@ class TestArchivo_crontab(unittest.TestCase):
         anhadir_sincronizacion("Datasets/tellico2", self.token, self.url, self.min, self.horas, self.dias, self.meses)
         result = listar_sincronizaciones()
         self.assertEqual(len(result), 2)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
+        eliminar_sincronizacion("Datasets/tellico2")
 
     def test_listavacia(self):
         result = listar_sincronizaciones()
@@ -89,17 +80,13 @@ class TestArchivo_crontab(unittest.TestCase):
         anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
         result = editar_sincronizacion(self.ruta, 1, 1, 1, 1)
         self.assertEqual(result, True)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
     def test_editar_error(self):
         anhadir_sincronizacion(self.ruta, self.token, self.url, self.min, self.horas, self.dias, self.meses)
         result = editar_sincronizacion("Datasets/tellico2", 1, 1, 1, 1)
         self.assertEqual(result, False)
-        usuario = getuser()
-        my_cron = CronTab(user=usuario)
-        my_cron.remove_all()
+        eliminar_sincronizacion(self.ruta)
 
 
 if __name__ == "__main__":
