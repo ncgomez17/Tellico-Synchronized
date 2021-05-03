@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(800, 600))
         MainWindow.setMaximumSize(QtCore.QSize(800, 600))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Descargas/tellico.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("imagenes/tellico.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("\n"
 "background-color: rgb(151, 165, 204);")
