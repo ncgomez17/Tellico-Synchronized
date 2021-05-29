@@ -7,6 +7,7 @@ from os import remove
 
 usuario = getuser()
 sys.path.append("/"+__file__.strip("Capa_logica_negocio/Sincronizacion.py")+"/")
+print(__file__.replace("Capa_logica_negocio/Sincronizacion.py",""))
 chmod(__file__, stat.S_IRWXU)
 from Capa_logica_negocio.LibrosJSON import LibrosJSON
 from Capa_acceso_datos.Extraccion import extraer_zip, tratar_xml
