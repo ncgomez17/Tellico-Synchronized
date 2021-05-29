@@ -114,7 +114,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         btn_borrar = QPushButton()
         btn_editar = QPushButton()
         btn_borrar.clicked.connect(self.elimnar_fila)
-        btn_borrar.setIcon(QtGui.QIcon('imagenes/borrar.png'))
+        btn_borrar.setIcon(QtGui.QIcon(":/tellico/imagenes/borrar.png"))
         btn_borrar.setIconSize(QtCore.QSize(30, 30))
         btn_borrar.setAutoFillBackground(True)
         pal = QPalette()
@@ -124,7 +124,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                  "background-color : red;"
                                  "}")
         btn_editar.clicked.connect(self.editar_fila)
-        btn_editar.setIcon(QtGui.QIcon('imagenes/editar.png'))
+        btn_editar.setIcon(QtGui.QIcon(":/tellico/imagenes/editar.png"))
         btn_editar.setIconSize(QtCore.QSize(30, 30))
         btn_borrar.setAutoFillBackground(True)
         pal2 = QPalette()

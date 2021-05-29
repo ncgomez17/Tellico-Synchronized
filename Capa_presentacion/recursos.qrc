@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="tellico">
     <file>imagenes/tellico.png</file>
+    <file>imagenes/borrar.png</file>
+    <file>imagenes/editar.png</file>
   </qresource>
 </RCC>

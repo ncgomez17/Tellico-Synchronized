@@ -35,8 +35,8 @@
    <string>Tellico-Synchronized</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../../../Descargas/tellico.png</normaloff>../../../Descargas/tellico.png</iconset>
+   <iconset resource="recursos.qrc">
+    <normaloff>:/tellico/imagenes/tellico.png</normaloff>:/tellico/imagenes/tellico.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">
@@ -225,7 +225,7 @@ background-color: rgb(151, 165, 204);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
    <property name="autoFillBackground">
