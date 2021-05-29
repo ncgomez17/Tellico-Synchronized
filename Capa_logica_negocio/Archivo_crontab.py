@@ -97,10 +97,3 @@ def editar_sincronizacion(ruta_archivo, minutos, horas, dias, meses):
         return False
 
 
-if __name__ == "__main__":
-    ruta = "/home/ncgomez17/Documentos/asdsad"
-    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.RCr9bzWVbSq9uNCROm0o8-h4SkoNdYyuaASS9JmlaBI"
-    ServidorWeb = 'http://192.168.1.47/index/colecciones/sincronizacion/'
-    anhadir_sincronizacion(ruta, token, ServidorWeb, 5, 0, 0, 12)
-    editar_sincronizacion(ruta, 4, 1, 0, 0)
-    print(listar_sincronizaciones())
